@@ -1,0 +1,9 @@
+.fish{
+    position: absolute;
+    background-color: orange;
+    height: 100px;
+    width: 150px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
