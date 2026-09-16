@@ -7,9 +7,14 @@
 }
 
 :root {
-
+  --black: #171717;
+  --gray: #282828;
+  --light-gray: #686868;
+  --blue: #5871EB;
+  --light-blue: #8597ef;
+  --font-inter: "Inter", sans-serif;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }

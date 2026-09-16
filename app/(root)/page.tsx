@@ -1,21 +1,30 @@
+"use client";
 import Image from "next/image";
 
 import Link from "next/link";
 
 import styles from "./page.module.css";
 
-import HomeHub from "@/components/home/home-hub/home-hub";
+import { getCurrentTime } from "@/utils/clock";
+import { useState, useEffect } from "react";
+import NavBar from "@/components/nav-bar/nav-bar";
 
 export default function Home() {
+  const [time, setTime] = useState(getCurrentTime());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(getCurrentTime());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className={styles.main}>
       <div className={styles.timer}>
-        <span>00:00</span>
+        <span>{time ?? "--:--:--"}</span>
       </div>
-      <Link href="/fish-tank">Fish Tank</Link>
-      <Link href="/notes">Notes</Link>
-
-      <HomeHub />
+      <NavBar />
     </main>
   );
 }
