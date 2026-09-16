@@ -1,21 +1,4 @@
-.main{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start ;
-    justify-content: center;
-    background-color: var(--black);
-    color: white;
-    font-family: var(--font-inter), inter, sans-serif;
-
-    & .clockContainer{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        & .timer{
+.timer{
             max-width: 650px;
             width: 100%;
             font-size: 3em;
@@ -34,8 +17,3 @@
                 align-items: center;
             }
         }
-    }
-
-    
-}
-
