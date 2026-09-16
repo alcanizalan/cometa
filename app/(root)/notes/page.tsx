@@ -1,7 +1,10 @@
 import styles from './page.module.css';
-import { supabase } from '@/lib/supabase';
+
+import { createClient } from '@/lib/supabase/client';
 
 async function getNotes() {
+  const supabase = createClient();
+
   const { data, error } = await supabase
     .from('note')
     .select('*');

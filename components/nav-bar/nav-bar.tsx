@@ -22,7 +22,7 @@ export default function NavBar() {
                     </Link>
                 </div>
                 <div className={styles.containerLink}>
-                    <Link href="/diary">
+                    <Link href="/notes">
                         <div className={styles.containerImage}>
                             <Image src="/icons/diary_logo.svg" width={80} height={80} alt="About" />
                         </div>
