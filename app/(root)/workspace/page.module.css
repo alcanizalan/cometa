@@ -78,13 +78,15 @@
             }
         }
 
-        & .fiveContainer{
+        & .configTimerContainer{
             grid-area: 5/2/7/3;
             background-color: var(--gray);
             border-radius: 40px;
             display: flex;
             justify-content: center;
             align-items: center;    
+
+            
         }
 
         & .sixContainer{

@@ -4,17 +4,20 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 import DigitalClock from "@/components/clock/clock";
+import ClockConfig from "@/components/clock/clock-config/clock-config";
 
 //14400;
 const WORK_TIME = 14400;
 
 export default function TimerPage(){
 
-    const [time, setTime] = useState(WORK_TIME);
-
-    
-
+    const [workTime, setWorkTime] = useState(WORK_TIME);
+    const [time, setTime] = useState(workTime);
     const [running, setRunning] = useState(false);
+
+    const hour = Math.floor(time / 3600);
+    const minute = Math.floor((time % 3600) / 60);
+    const second = time % 60;
 
     function endTimer(){
         setRunning(false);
@@ -28,6 +31,7 @@ export default function TimerPage(){
         const interval = setInterval(() => {
             setTime((prev) => {
                 if (prev <= 1) {
+                    clearInterval(interval);
                     endTimer();
                     return 0;
                 }
@@ -62,10 +66,16 @@ export default function TimerPage(){
                     </div>
                 </div>
                 <div className={styles.timerContainer}>
-                    <p>{time}</p>
+                    <p>{`${hour}:${String(minute).padStart(2, "0")}:${String(second).padStart(2, "0")}`}</p>
                     <button onClick={!running ? handleClick : handlePause}>{!running ? "Start" : "Pause"}</button>
                 </div>
-                <div className={styles.fiveContainer}>5</div>
+                <div className={styles.configTimerContainer}>
+                    <ClockConfig
+                        hour={hour}
+                        minute={minute}
+                        setTime={setTime}
+                    />
+                </div>
                 <div className={styles.sixContainer}>6</div>
                 <div className={styles.sevenContainer}>7</div>
             </div>

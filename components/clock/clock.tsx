@@ -1,6 +1,4 @@
 
-
-
 import { getDigitalClock } from "@/utils/clock";
 import styles from "./clock.module.css"
 
