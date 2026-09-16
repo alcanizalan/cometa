@@ -6,10 +6,14 @@ import styles from "./page.module.css";
 import DigitalClock from "@/components/clock/clock";
 
 //14400;
-const WORK_TIME = 5;
+const WORK_TIME = 14400;
 
 export default function TimerPage(){
+
     const [time, setTime] = useState(WORK_TIME);
+
+    
+
     const [running, setRunning] = useState(false);
 
     function endTimer(){
